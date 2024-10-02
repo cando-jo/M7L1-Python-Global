@@ -9,7 +9,7 @@ hucre.width = 50
 hucre.height = 50
 TITLE = "Zindanlar" # Oyunun Adı
 FPS = 30 # Saniyedeki Kare Sayısı
-
+karakter = Actor("karakter")
 haritam = [[0, 0, 0, 0, 0, 0, 0],
            [0, 1, 2 , 1, 3, 1, 0],
            [0, 1, 1, 2, 1, 1, 0],
@@ -48,4 +48,23 @@ def harita_ciz():
 def draw():
     hucre.draw()
     harita_ciz()
-    
+    karakter.draw()
+
+def on_key_down(key):
+    if keyboard.left:
+        karakter.x -= 50
+        karakter.image = 'sol'
+
+    if keyboard.right:
+        karakter.x += 50
+        karakter.image = 'karakter'
+
+    if keyboard.up:
+        karakter.y -= 50
+
+
+    if keyboard.down:
+        karakter.y += 50
+
+        
+        
